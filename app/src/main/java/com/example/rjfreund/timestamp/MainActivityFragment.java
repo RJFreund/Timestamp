@@ -1,5 +1,6 @@
 package com.example.rjfreund.timestamp;
 
+import android.app.ListFragment;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +16,7 @@ import java.util.Date;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class MainActivityFragment extends ListFragment {
 
     public MainActivityFragment() {
     }
@@ -33,6 +34,8 @@ public class MainActivityFragment extends Fragment {
                 timestampTextView.setText(now.toString());
             }
         });
+
+        //this.setListAdapter();
         return fragmentView;
     }
 }
