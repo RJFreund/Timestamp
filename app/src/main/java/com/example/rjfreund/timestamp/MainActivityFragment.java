@@ -12,36 +12,40 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.security.Timestamp;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+import com.example.rjfreund.timestamp.Timestamp;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
 
-    private List<String> timestamps;
-
     public MainActivityFragment() {
-        timestamps = new ArrayList<String>();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_main, container, false);
+        /*
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 getActivity(), R.layout.timestamp, R.id.textView, timestamps
         );
+        */
+        final ArrayList<Timestamp> timestamps = new ArrayList<Timestamp>();
+        timestamps.add(new Timestamp("hey"));
+        timestamps.add(new Timestamp("you"));
+        timestamps.add(new Timestamp("What's"));
+        timestamps.add(new Timestamp("up?"));
+        final ListViewTimestampAdapter arrayAdapter = new ListViewTimestampAdapter(getActivity(), R.id.textView, timestamps);
         Button addTimestampBtn = (Button) fragmentView.findViewById(R.id.addTimestampButton);
         addTimestampBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Date createDate = new Date();
-                timestamps.add(createDate.toString());
+                timestamps.add(new Timestamp());
                 arrayAdapter.notifyDataSetChanged();
             }
         });

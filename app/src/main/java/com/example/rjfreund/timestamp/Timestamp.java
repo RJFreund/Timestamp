@@ -14,4 +14,31 @@ public class Timestamp {
         this.createDate = createDate;
         this.note = note;
     }
+
+    public Timestamp(String note)
+    {
+        this.createDate = new Date();
+        this.note = note;
+    }
+
+    public Timestamp() {
+        this.createDate = new Date();
+        this.note = "yo";
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }
