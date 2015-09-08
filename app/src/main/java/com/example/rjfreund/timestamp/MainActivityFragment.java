@@ -35,18 +35,13 @@ public class MainActivityFragment extends Fragment {
                 getActivity(), R.layout.timestamp, R.id.textView, timestamps
         );
         */
-        final ArrayList<Timestamp> timestamps = new ArrayList<Timestamp>();
-        timestamps.add(new Timestamp("hey"));
-        timestamps.add(new Timestamp("you"));
-        timestamps.add(new Timestamp("What's"));
-        timestamps.add(new Timestamp("up?"));
-        final ListViewTimestampAdapter arrayAdapter = new ListViewTimestampAdapter(getActivity(), R.id.textView, timestamps);
+
+        final ListViewTimestampAdapter arrayAdapter = new ListViewTimestampAdapter(getActivity(), R.layout.timestamp, new ArrayList<Timestamp>());
         Button addTimestampBtn = (Button) fragmentView.findViewById(R.id.addTimestampButton);
         addTimestampBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                timestamps.add(new Timestamp());
-                arrayAdapter.notifyDataSetChanged();
+                arrayAdapter.addTimestamp(new Timestamp());
             }
         });
 
