@@ -9,8 +9,8 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="createDate"
-        android:id="@+id/createDate"
+        android:text="datetime"
+        android:id="@+id/datetime"
         android:layout_alignParentLeft="true"
         android:layout_weight="1"
         />
@@ -18,10 +18,10 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="note"
-        android:id="@+id/note"
-        android:layout_alignRight="@+id/createDate"
-        android:layout_alignEnd="@+id/createDate"
+        android:text="text"
+        android:id="@+id/text"
+        android:layout_alignRight="@+id/datetime"
+        android:layout_alignEnd="@+id/datetime"
         android:ellipsize="end"
         android:maxLines="2"
         android:layout_weight="1"

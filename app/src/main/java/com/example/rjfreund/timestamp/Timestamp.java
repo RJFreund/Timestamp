@@ -6,39 +6,39 @@ import java.util.Date;
  * Created by rjf5742 on 15-08-22.
  */
 public class Timestamp {
-    private Date createDate;
-    private String note;
+    private Date datetime;
+    private String text;
 
-    public Timestamp(Date createDate, String note)
+    public Timestamp(Date datetime, String text)
     {
-        this.createDate = createDate;
-        this.note = note;
+        this.datetime = datetime;
+        this.text = text;
     }
 
-    public Timestamp(String note)
+    public Timestamp(String text)
     {
-        this.createDate = new Date();
-        this.note = note;
+        this.datetime = new Date();
+        this.text = text;
     }
 
     public Timestamp() {
-        this.createDate = new Date();
-        this.note = "yo";
+        this.datetime = new Date();
+        this.text = "yo";
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public Date getDatetime() {
+        return datetime;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
     }
 
-    public String getNote() {
-        return note;
+    public String getText() {
+        return text;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setText(String text) {
+        this.text = text;
     }
 }

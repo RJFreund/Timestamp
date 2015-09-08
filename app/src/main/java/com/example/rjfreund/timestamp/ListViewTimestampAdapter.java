@@ -7,10 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListViewTimestampAdapter extends ArrayAdapter<Timestamp>{
 
@@ -31,13 +29,13 @@ public class ListViewTimestampAdapter extends ArrayAdapter<Timestamp>{
     public View getView(final int position, View convertView, ViewGroup parent)
     {
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.timestamp, parent, false);
-        TextView createDate = (TextView) convertView.findViewById(R.id.createDate);
-        TextView note = (TextView) convertView.findViewById(R.id.note);
+        TextView createDate = (TextView) convertView.findViewById(R.id.datetime);
+        TextView note = (TextView) convertView.findViewById(R.id.text);
         Button deleteButton = (Button) convertView.findViewById(R.id.buttonDelete);
 
         Timestamp timestamp = getItem(position);
-        createDate.setText(timestamp.getCreateDate().toString());
-        note.setText(timestamp.getNote());
+        createDate.setText(timestamp.getDatetime().toString());
+        note.setText(timestamp.getText());
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
